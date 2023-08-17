@@ -1,0 +1,70 @@
+bplist00�_WebMainResource�	
+_WebResourceMIMEType_WebResourceTextEncodingName^WebResourceURL_WebResourceFrameName_WebResourceDataYtext/htmlUutf-8_file:///index.htmlPO$m<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #000000; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: rgba(0, 0, 0, 0.85); background-color: #f2f2f2}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #000000; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: rgba(0, 0, 0, 0.85); background-color: #f2f2f2; min-height: 16.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #2c9b36; -webkit-text-stroke: #2c9b36; background-color: #f2f2f2}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Menlo; color: #1e6873; -webkit-text-stroke: #1e6873; background-color: #f2f2f2}
+    span.s1 {font-kerning: none; color: #b85dd5; -webkit-text-stroke: 0px #b85dd5}
+    span.s2 {font-kerning: none}
+    span.s3 {font-kerning: none; color: #bd7b2f; -webkit-text-stroke: 0px #bd7b2f}
+    span.s4 {font-kerning: none; color: #2c9b36; -webkit-text-stroke: 0px #2c9b36}
+    span.s5 {font-kerning: none; color: rgba(0, 0, 0, 0.85); -webkit-text-stroke: 0px rgba(0, 0, 0, 0.85)}
+    span.s6 {font-kerning: none; color: #1e6873; -webkit-text-stroke: 0px #1e6873}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">const</span><span class="s2"> puppeteer = </span><span class="s3">require</span><span class="s2">(</span><span class="s4">'puppeteer'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s1">const</span><span class="s5"> URL_TEST = </span><span class="s2">'https://qa-routes.praktikum-services.ru/'</span><span class="s5">;</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p4"><span class="s1">async</span><span class="s5"> </span><span class="s1">function</span><span class="s5"> </span><span class="s2">testTaxiResult</span><span class="s5">() {</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Запуск браузера'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> browser = </span><span class="s1">await</span><span class="s2"> puppeteer.launch({</span><span class="s3">headless</span><span class="s2">: false, </span><span class="s3">slowMo</span><span class="s2">: </span><span class="s6">100</span><span class="s2">});</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Создание новой вкладки в браузере'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> page = </span><span class="s1">await</span><span class="s2"> browser.newPage();</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Переход по ссылке'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> page.goto(URL_TEST);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Шаг 1: ввод часов и минут'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> hoursInput = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#form-input-hour'</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> hoursInput.type(</span><span class="s4">'08'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> minutesInput = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#form-input-minute'</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> minutesInput.type(</span><span class="s4">'00'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Шаг 2: заполнение поля Откуда'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> fromInput = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#form-input-from'</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> fromInput.type(</span><span class="s4">'Усачева, 3'</span><span class="s2">);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Шаг 3: заполнение поля Куда'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> toInput = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#form-input-to'</span><span class="s2">);</span></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s5"> toInput.type(</span><span class="s2">'Комсомольский проспект, 18'</span><span class="s5">);</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Шаг 4: выбор режима Свой'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> routeMode = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#form-mode-custom'</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> routeMode.click();</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Шаг 5: выбор вида транспорта'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">const</span><span class="s2"> typeOfTransport = </span><span class="s1">await</span><span class="s2"> page.$(</span><span class="s4">'#from-type-taxi'</span><span class="s2">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> typeOfTransport.click();</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> page.screenshot({</span><span class="s3">path</span><span class="s2">: </span><span class="s4">'testTaxiResult.png'</span><span class="s2">});</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p3"><span class="s5"><span class="Apple-converted-space">    </span></span><span class="s3">console</span><span class="s5">.log(</span><span class="s2">'Закрытие браузера'</span><span class="s5">);</span></p>
+<p class="p1"><span class="s2"><span class="Apple-converted-space">    </span></span><span class="s1">await</span><span class="s2"> browser.close();</span></p>
+<p class="p1"><span class="s2">}</span></p>
+<p class="p2"><span class="s2"></span><br></p>
+<p class="p1"><span class="s2">testTaxiResult();<span class="Apple-converted-space"> </span></span></p>
+</body>
+</html>
+    ( > \ k � � � � � �                           %+
